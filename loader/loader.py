@@ -18,17 +18,16 @@ def upload():
         content = request.values['content']
         posts = load_posts()
         posts.append({
-            'pic': f'uploads/images/{filename}',
+            'pic': f'/uploads/images/{filename}',
             'content': content
         })
         uploads_posts(posts)
         file.save(f'uploads/images/{filename}')
-        if filename.split(".")[-1] not in ['png', 'jpeg', 'jpg']:
+        if filename.split(".")[-1] not in ['png', 'jpeg', 'jpg', 'gif']:
             logging.info("Загружаемый файл не картинка")
     except FileNotFoundError:
         logging.error("Ошибка загрузки файла")
         return "<h1> Файл не найден </h1>"
     else:
-        return render_template('post_uploaded.html', pic=f'uploads/images/{filename}', content=content)
-
+        return render_template('post_uploaded.html', pic=f'/uploads/images/{filename}', content=content)
 

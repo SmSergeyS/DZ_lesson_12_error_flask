@@ -1,5 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory
-# from functions import ...
+from flask import Flask, send_from_directory
 from main.main import main_blueprint
 from loader.loader import loader_blueprint
 
@@ -11,9 +10,7 @@ app.register_blueprint(main_blueprint)
 app.register_blueprint(loader_blueprint)
 
 
-@app.route("/")
-def page_index():
-    pass
+#
 
 
 @app.route("/list")
@@ -36,5 +33,5 @@ def static_dir(path):
     return send_from_directory(UPLOAD_FOLDER, path)
 
 
-app.run()
+app.run(debug=True)
 
