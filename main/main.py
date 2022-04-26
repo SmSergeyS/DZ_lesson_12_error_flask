@@ -2,7 +2,8 @@ from flask import Blueprint, request, render_template
 import logging
 from functions import load_posts
 
-main_blueprint = Blueprint('main', __name__, template_folder='templates')
+
+main_blueprint = Blueprint('main', __name__, static_folder='static_m', template_folder='templates')
 logging.basicConfig(encoding='UTF-8', level=logging.INFO)
 
 

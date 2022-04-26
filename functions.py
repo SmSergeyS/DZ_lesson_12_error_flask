@@ -12,5 +12,3 @@ def load_posts():
 def uploads_posts(posts):
     with open(POST_PATH, 'w', encoding='UTF-8') as file:
         json.dump(posts, file, ensure_ascii=False, indent=4)
-
-

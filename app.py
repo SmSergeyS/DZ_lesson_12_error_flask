@@ -33,5 +33,5 @@ def static_dir(path):
     return send_from_directory(UPLOAD_FOLDER, path)
 
 
-app.run(debug=True)
+app.run()
 

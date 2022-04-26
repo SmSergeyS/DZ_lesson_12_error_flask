@@ -2,7 +2,7 @@ from flask import Blueprint, request, render_template
 import logging
 from functions import load_posts, uploads_posts
 
-loader_blueprint = Blueprint('loader', __name__, url_prefix='/post', static_folder='static', template_folder='templates')
+loader_blueprint = Blueprint('loader', __name__, url_prefix='/post', static_folder='static_l', template_folder='templates')
 
 
 @loader_blueprint.route('/form/')
